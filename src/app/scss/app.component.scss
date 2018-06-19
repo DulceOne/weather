@@ -4,3 +4,59 @@ header{
     width: 100%;
     margin: auto;
 }
+
+main{
+    .weather{
+        width: 600px;
+        margin:auto;
+        border:1px solid rgba(0,0,0,0.6);
+        .day{
+            .item{
+                .wraper{
+
+                }
+                .info{
+                    .left{
+                        width:300px;
+                        align-items: center;
+                        font-size: 35pxs;
+                    }
+                    .right{
+                        width:300px;
+                    }
+                }
+                .days{
+                    .item{
+                        display: flex;
+                        width: 100px;
+                        padding:10px 20px;
+                        margin-left: 5px;
+                        justify-content: center;
+                        border:1px solid transparent;
+                        transition:all 1s;
+                        cursor:pointer;
+                        margin: auto;
+                        &:hover,&:active{
+                            border:1px solid rgba(0,0,0,0.6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.map{
+    width: 600px;
+    margin: auto;
+    agm-map{
+        height: 400px;
+    }
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}

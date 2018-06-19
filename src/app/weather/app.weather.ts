@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
-const days = ["Первый","Второй","Третий","Четверытый","Пятый"];
+import { Component, OnInit ,OnChanges, SimpleChanges, DoCheck} from '@angular/core';
+// import { appService } from '../shared/app.service';
 @Component({
-  selector: 'app-weather',
-  templateUrl: 'app.weather.html',
-  styleUrls: ['../app.component.css']
+    selector: 'app-weather',
+    templateUrl: 'app.weather.html',
+    styleUrls: ['../app.component.css']
 })
-export class AppComponentWeather {
-  days = days;
+export class AppComponentWeather{
+    public days:object;
+
+    getDays(days){
+        console.log(days);
+    }
 }
+

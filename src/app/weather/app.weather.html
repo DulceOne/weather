@@ -1,3 +1,32 @@
-<div class="item" *ngFor="let day of days">
-    {{day}}
-</div>
+<main>
+    <div class="weather">
+        <div class="day">
+            <div class="item column">
+                <div class="name row">Запорожье</div>
+                <div class="wraper row">
+                    <div class="day">воскресенье</div>
+                    <div class="time">11:00</div>
+                </div>
+                <div class="info row">
+                    <div class="left row">
+                        <img src="http://openweathermap.org/img/w/02d.png" alt="">
+                        <div class="temp">29 ℃</div>
+                    </div>
+                    <div class="right column">
+                        <div class="humidity">Влажность: 78</div>
+                        <div class="pressure">Давление: 999.48</div>
+                    </div>
+                </div>
+                <div class="days row">
+                    <div class="item">сб</div>
+                    <div class="item">вс</div>
+                    <div class="item">пн</div>
+                    <div class="item">ср</div>
+                    <div class="item">чт</div>
+                </div>
+
+                {{days}}
+            </div>
+        </div>
+    </div>
+</main>

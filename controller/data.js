@@ -7,16 +7,20 @@ exports.checkWeather = function(req,res){
     }
     console.log(weather.city)
     data.checkWeather(weather,function(err,result){
-        if(result.length)
+        if(result)
             return    res.send(result);
         request(`http://api.openweathermap.org/data/2.5/forecast/?q=${weather.city}&appid=4934a8acfe7e7632fc25391a747ebd16`, function (error, response, body) {
             if(!error){
-                weather.body = body;
+                console.log(error);
+                weather.body = JSON.parse(body);
                 data.saveWeather(weather,function(err2,docs){
                     if(!err2)
-                        return res.send(docs)
+                        return res.send(docs.ops[0])
                     res.send(err2);
                 })
+            }
+            else{
+                console.log('not error')
             }
         });
         

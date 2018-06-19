@@ -1,10 +1,10 @@
 var db = require('../db');
 
 exports.checkWeather = function(weather,cb){
-    db.get().collection('weather').find({
+    db.get().collection('weather').findOne({
             city:weather.city,
             date:weather.date
-        }).toArray(function(err,res){
+        },function(err,res){
             cb(err,res);
         })
 }

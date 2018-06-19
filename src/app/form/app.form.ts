@@ -1,23 +1,23 @@
-import { Component, Injectable } from '@angular/core';
-import {appService} from '../shared/app.cervice';
+import { Component, Injectable,OnInit,Output,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { appService } from '../shared/app.service';
 @Component({
-  selector: 'app-form',
-  templateUrl: 'app.form.html',
-  styleUrls: ['../app.component.css']
+	selector: 'app-form',
+	templateUrl: 'app.form.html',
+	styleUrls: ['../app.component.css']
 })
 @Injectable()
 export class AppComponentForm {
-  constructor (private httpClient: HttpClient){}
-  city:string;
-  date:Date;
-  send(){
-      // this.httpClient.post(`http://server-weather:9000/saveWeather`,{})
-      this.httpClient.get(`http://localhost:9000/checkWeather/?city=${this.city}&date=${this.date}`)
-      .subscribe(
-        (data)=> {
-          console.log(data);
-        }
-      )
-  }
+	city:string;
+	date:Date;
+	days:object;
+	constructor (public service:appService){}
+	Send(){
+		this.service.Send(this.city,this.date);
+	}
 }
+
+
+
+
+
