@@ -1,7 +1,7 @@
 # Практическое задание Light-It
 
 ## Installation
->$ npm install WeatherDB
+>$ npm install 
 
 ## Usage
 
