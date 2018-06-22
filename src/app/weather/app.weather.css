@@ -1,0 +1,131 @@
+.weather{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    height: 500px;
+}
+
+.weather .empty {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.weather .days{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: -10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #2c3e50;
+    text-align: center;
+    font-size: 16px;
+}
+.weather .days .item {
+    flex: 1;
+    padding: 4px 10px;
+    margin: 0px 5px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.weather .days .item:hover {
+    background-color: #3498db;
+}
+
+
+.weather .hours {
+    flex: 0 100%;
+    height: 430px;
+    overflow: auto;
+}
+
+.weather .hours .hour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.weather .hours .hour::last-child {
+    border-bottom: 0px;
+}
+
+.weather .hours .hour .time {
+    opacity: 0.85;
+    font-size: 22px;
+    font-weight: 400px;
+}
+.weather .hours .hour .small {
+    opacity: 0.5;
+    font-size: 15px;
+}
+.weather .hours .hour .temp {
+    color: white;
+    background: #2ecc71;
+    width: 60px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 22px;
+    padding: 3px 5px;
+}
+
+.weather .hours::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+/* Handle */
+.weather .hours::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+}
+
+/*
+.weather .days .item{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid rgba(0,0,0,0.6);
+    margin-left:5px;
+}
+.weather .day{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+.weather .day .hour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    background-color: white;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.weather .day .hour div{
+    text-align: center;
+    margin: auto;
+}*/

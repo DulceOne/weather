@@ -4,7 +4,7 @@ import { appService } from '../shared/app.service';
 @Component({
 	selector: 'app-form',
 	templateUrl: 'app.form.html',
-	styleUrls: ['../app.component.css']
+	styleUrls: ['app.form.css']
 })
 @Injectable()
 export class AppComponentForm {

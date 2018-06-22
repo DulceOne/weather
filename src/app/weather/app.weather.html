@@ -1,32 +1,17 @@
-<main>
-    <div class="weather">
-        <div class="day">
-            <div class="item column">
-                <div class="name row">Запорожье</div>
-                <div class="wraper row">
-                    <div class="day">воскресенье</div>
-                    <div class="time">11:00</div>
-                </div>
-                <div class="info row">
-                    <div class="left row">
-                        <img src="http://openweathermap.org/img/w/02d.png" alt="">
-                        <div class="temp">29 ℃</div>
-                    </div>
-                    <div class="right column">
-                        <div class="humidity">Влажность: 78</div>
-                        <div class="pressure">Давление: 999.48</div>
-                    </div>
-                </div>
-                <div class="days row">
-                    <div class="item">сб</div>
-                    <div class="item">вс</div>
-                    <div class="item">пн</div>
-                    <div class="item">ср</div>
-                    <div class="item">чт</div>
-                </div>
+<div class="weather">
+    <div class="empty" *ngIf="!days.length">Enter your city and press Search...</div>
 
-                {{days}}
-            </div>
+    <div class="days" *ngIf="days.length">
+        <div class="item" *ngFor="let day of days" data-id="{{day}}" (click)="getDay($event)">{{day}}</div>
+    </div>
+
+    <div class="hours" *ngIf="days.length">
+        <div class="hour" *ngFor="let hour of day">
+            <div class="time">{{hour.hours}}:{{hour.minutes}}</div>
+            <div class="pressure small">Давление: {{hour.main.pressure}}</div>
+            <div class="humidity small">Влажность: {{hour.main.humidity}}%</div>
+            <img src="https://openweathermap.org/img/w/{{hour.weather[0].icon}}.png" class="image">
+            <div class="temp">+{{hour.main.temp}}</div>
         </div>
     </div>
-</main>
+</div>
