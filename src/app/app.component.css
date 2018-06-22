@@ -1,12 +1,15 @@
 app-form {
+    display: block;
     flex: 0 100%;
     margin-bottom: 10px;
 }
 app-map {
+    display: block;
     flex: 0 600px;
     box-sizing: border-box;
 }
 app-weather {
+    display: block;
     flex: 0 590px;
     margin-left: 10px;
     box-sizing: border-box;
@@ -16,10 +19,9 @@ app-weather {
     font-weight: 600;
     font-size: 58px;
     text-align: center;
-    width: 1200px;
-    flex: 0 1200px;
     margin-bottom: 20px;
     margin-top: -20px;
+    flex: 0 1200px;
 }
 .title span {
     color: #3498db;
@@ -32,9 +34,17 @@ app-weather {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-.wraper {
-    display: flex;
-    flex-direction: row;
-    width: 1200px;
-    margin: auto;
+
+@media screen and (orientation:portrait) {
+    .app {
+        width: 100%;
+        display: block;
+    }
+    .title {
+        margin-top: 10px;
+        font-size: 9vw;
+    }
+    app-form {margin-bottom: 2vw;}
+    app-map {margin-bottom: 2vw;}
+    app-weather {margin-left: 0px;}
 }

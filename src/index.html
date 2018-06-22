@@ -15,6 +15,7 @@
 	<style>
 	html, body {		
 		height: 100%;
+		width: 100%;
 	}
 	body {
 		padding: 0px;
@@ -31,6 +32,15 @@
 		font-size: inherit;
 		color: inherit;
 		box-sizing: border-box;
+	}
+	@media screen and (orientation:portrait) {
+		body {
+			display: block;
+			padding: 2vw;
+			box-sizing: border-box;
+			height: initial;
+			padding-bottom: 4vw;
+		}
 	}
 	</style>
 </body>
