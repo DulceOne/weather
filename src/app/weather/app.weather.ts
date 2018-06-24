@@ -17,6 +17,7 @@ export class AppComponentWeather{
         this.appService.weatherEmitter.subscribe(data => {
             this.data = data;
             this.days = [];
+            this.day = [];
             this.days.push(this.parseDate(data.body.list[0].dt).day + "." + this.parseDate(data.body.list[0].dt).month);
             this.old = this.parseDate(data.body.list[0].dt).day + "." + this.parseDate(data.body.list[0].dt).month;
             for(var day of data.body.list){

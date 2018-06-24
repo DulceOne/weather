@@ -11,11 +11,11 @@ You need to create a mongodb database named: `WeatherDB`
 
 Start NodeJS server:
 
->node server  
+>$ node server  
 
 Start angular application:
->ng serve
+>$ ng serve
 
 Open in browser: 
->localhost:4200
+>$ localhost:4200
 

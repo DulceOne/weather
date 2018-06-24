@@ -21,20 +21,13 @@ export class appService{
 			(data)=> {
 				if(data){
 					this.days = data;
-					// this.latitude = data.body.city.coord.lat;
-					// this.longitude = data.body.city.coord.lon;
-					// this.title = data.body.city.name;
-					this.sendDays();
-					this.sendCoord();
+					this.sendDaysAndCoord();
 				}
 			}
 		)
 	}
-	sendDays(){
+	sendDaysAndCoord(){
 		this.weatherEmitter.emit(this.days);
-	}
-	sendCoord(){
-		// this.mapEmitter.emit({latitude:this.latitude,longitude:this.longitude,title:this.title});
 		this.mapEmitter.emit(this.days);
 	}
 }
