@@ -100,7 +100,20 @@
     background: rgba(0, 0, 0, 0.25);
     border-radius: 100px;
 }
-
+.weather .error{
+    color:tomato;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+.weather .error .city{
+    color:#219c55;
+}
 /*
 .weather .days .item{
     width: 100%;

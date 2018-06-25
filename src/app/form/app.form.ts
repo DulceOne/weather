@@ -13,6 +13,7 @@ export class AppComponentForm {
 	days:object;
 	constructor (public service:appService){}
 	Send(){
+		console.log("valid")
 		this.service.Send(this.city,this.date);
 	}
 }

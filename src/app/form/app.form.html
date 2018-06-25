@@ -1,5 +1,5 @@
-<div class="form">
-    <input type="search" placeholder="City" name="city" class="city" minlength="2" maxlength="20"  [(ngModel)]="city">
-    <input type="date" placeholder="Date"  name="date" class="date"  [(ngModel)]="date">
-    <button class="btn send" (click)="Send()" [disabled] >Search</button>
-</div>
+<form class="form" #myForm="ngForm">
+    <input type="search" placeholder="City" name="city" class="city" minlength="2" maxlength="20" required  [(ngModel)]="city">
+    <input type="date" placeholder="Date"  name="date" class="date" required  [(ngModel)]="date">
+    <button class="btn send" (click)="Send()" [disabled]="!myForm.form.valid">Search</button>
+</form>

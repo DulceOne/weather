@@ -11,6 +11,8 @@ export class AppComponentWeather{
     public week:Array<string> = ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"];
     public days: any = [];
     public day: any = [];
+    public error: any;
+    public city:any;
     constructor(private appService: appService) { }
 
     ngOnInit() {
@@ -27,12 +29,29 @@ export class AppComponentWeather{
                     this.days.push(this.parseDate(day.dt).day + "." + this.parseDate(day.dt).month);
                     this.old = this.parseDate(day.dt).day + "." + this.parseDate(day.dt).month;
                 }
+                if(this.getDate(this.data.date) == this.parseDate(day.dt).day + "." + this.parseDate(day.dt).month){
+                    var date = this.parseDate(day.dt);
+                    var day_full = Object.assign(day, date);
+                    this.day.push(day_full);
+                }
             }
 
-            console.log(this.days);
+            console.log(this.day);
         });
+
+        this.appService.errorEmitter.subscribe(data=>{
+            this.days = [];
+            this.error = data.body.cod;
+            this.city = data.city;
+        })
     }
-   
+
+    
+   getDate(date){
+       var day = new Date(date).getDate();
+       var month = new Date(date).getMonth()+1;
+       return this.zeroAdd(day) + "." + this.zeroAdd(month);
+   }
 
     parseDate(dt){
         var date =  new Date(dt*1000);
@@ -58,9 +77,7 @@ export class AppComponentWeather{
                 this.day.push(day_full);
             }
         }
-        // console.log(day);
-        // console.log(this.day);
-        // console.log(target);
+        console.log(this.day);
     }
 }
 

@@ -22,7 +22,7 @@ import { AppComponentMap } from './map/app.map';
 		FormsModule,
 		AgmCoreModule.forRoot({
 			apiKey: 'AIzaSyB_14VszYiw4ZNPk06EH91C9ZM-t9CQnaU'
-		  })
+		})
 	],
 	providers: [AppComponentWeather,appService,AppComponentForm,AppComponentMap],
 	bootstrap: [AppComponent]

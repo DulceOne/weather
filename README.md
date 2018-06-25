@@ -9,6 +9,10 @@
 
 You need to create a mongodb database named: `WeatherDB`
 
+If you do not have angular use:
+
+>$ npm install -g @angular/cli
+
 Start NodeJS server:
 
 >$ node server  

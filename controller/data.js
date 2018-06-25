@@ -20,7 +20,7 @@ exports.checkWeather = function(req,res){
                 })
             }
             else{
-                console.log('not error')
+                re.send(error);
             }
         });
         

@@ -1,6 +1,6 @@
 <div class="weather">
-    <div class="empty" *ngIf="!days.length">Enter your city and press Search...</div>
-
+    <div class="empty" *ngIf="!days.length && !error">Enter your city and press Search...</div>
+    <div class="error" *ngIf="!days.length && error">Cities with the name of <span class="city">&nbsp;&nbsp;&nbsp;{{city}}&nbsp;&nbsp;&nbsp;</span> not found</div>
     <div class="days" *ngIf="days.length">
         <div class="item" *ngFor="let day of days" data-id="{{day}}" (click)="getDay($event)">{{day}}</div>
     </div>
